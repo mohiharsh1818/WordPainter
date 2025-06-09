@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { assets } from '../assets/assets'
 import { AppContext } from '../context/AppContext'
 import { motion } from 'framer-motion'
+import { toast } from 'react-toastify'
 
 const Result = () => {
 
@@ -15,12 +16,14 @@ const Result = () => {
   const onSubmitHandler = async (e) => {
     e.preventDefault()
     setLoading(true)
+    toast.info("AI Image generating")
 
     if (input) {
       const image = await generateImage(input)
       if (image) {
         setIsImageLoaded(true)
         setImage(image)
+        
       }
     }
     setLoading(false)

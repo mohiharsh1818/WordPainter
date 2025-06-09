@@ -28,6 +28,7 @@ const Login = () => {
                     setUser(data.user)
                     localStorage.setItem('token', data.token)
                     setShowLogin(false)
+                    toast.success("Login successful!");
                 } else {
                     toast.error(data.message)
                 }

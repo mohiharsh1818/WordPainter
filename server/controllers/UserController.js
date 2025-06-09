@@ -155,7 +155,7 @@ const paymentRazorpay = async (req, res) => {
                 return res.json({ success: false, message: error });
             }
             res.json({ success: true, order });
-        })
+        }) 
 
     } catch (error) {
         console.log(error)
